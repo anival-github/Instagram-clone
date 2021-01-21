@@ -1,11 +1,13 @@
 import { Component } from "react";
 // import Post from './Post'
 import InstaService from "../services/instaService";
+import Network from "../services/network";
 import User from './User';
 import ErrorMessage from './Error';
 
 export default class Posts extends Component {
-  InstaService = new InstaService();
+  // InstaService = new InstaService();
+  InstaService = new Network();
 
   state = {
     posts: [],
