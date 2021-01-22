@@ -44,7 +44,7 @@ export default class Posts extends Component {
     return arr.map((item) => {
       const { username, altname, photo, id } = item;
       const { src, alt, descr, timestamp } = item.posts[0];
-     
+     const date = new Date(+timestamp).toUTCString();
       return (
         <div key={id} className="post">
           <User
@@ -61,7 +61,7 @@ export default class Posts extends Component {
             {descr}
           </div>
           <p className="post__time">
-            {Date(timestamp).slice(0,24)}
+            {date}
           </p>
         </div>
       );
