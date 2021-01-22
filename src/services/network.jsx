@@ -26,10 +26,21 @@ export default class Network {
   //   return res.map(this._transformPosts)
   // }
 
-  // _transformPosts = (post) => {
-  //   return {
-  //     src: post.src,
-  //     alt: post.alt,
-  //   }
-  // }
+  _transformPosts = (post) => {
+    return {
+      src: post.src,
+      alt: post.alt,
+      timestamp: post.timestamp
+    }
+  }
+
+  getUserPhotos = async (id) => {
+    const users = await this.getResource('/posts/')
+
+    const user = users.find(element => element.id === id)
+
+    const { posts } = user;
+
+    return posts.map(this._transformPosts)
+  }
 }

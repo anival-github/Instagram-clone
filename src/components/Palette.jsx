@@ -1,9 +1,8 @@
 import { Component } from "react";
-import InstaService from "../services/instaService";
 import ErrorMessage from "./Error";
-
+import Network from '../services/network'
 export default class Palette extends Component {
-  InstaService = new InstaService();
+  InstaService = new Network();
 
   state = {
     error: false,
@@ -16,12 +15,13 @@ export default class Palette extends Component {
   }
 
   updatePhotos() {
-    this.InstaService.getAllPhotos()
+    this.InstaService.getUserPhotos('1cf6f207-6cde-4cd5-bff7-143946d21fe3')
       .then(this.onPhotosLoaded)
       .catch(this.onError);
   }
 
-  onError = () => {
+  onError = (error) => {
+    console.log(error.message);
     this.setState({
       error: true,
     });
@@ -37,8 +37,8 @@ export default class Palette extends Component {
 
   renderItems(arr) {
     return arr.map((item) => {
-      const { src, alt } = item;
-      return <img src={src} alt={alt}></img>;
+      const { src, alt, timestamp } = item;
+      return <img src={src} alt={alt} key={timestamp}></img>;
     });
   }
 
