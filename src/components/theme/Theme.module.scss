@@ -1,0 +1,15 @@
+.themeBox {
+  width: max-content;
+  position: fixed;
+  top: 100px;
+  left: 2%;
+}
+.moon {
+  cursor: pointer;
+  transition: all 0.4s linear;
+  width: 30px;
+  border-radius: 50px;
+}
+.moon:hover {
+  transform: rotate(180deg);
+}

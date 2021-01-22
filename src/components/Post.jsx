@@ -1,8 +1,8 @@
 import { Component } from "react";
-import User from './User'
+import User from "./User";
 
 export default class Post extends Component {
-  render () {
+  render() {
     return (
       <div className="post">
         <User
@@ -12,13 +12,9 @@ export default class Post extends Component {
           min
         />
         <img src={this.props.src} alt={this.props.alt}></img>
-        <div className="post__name">
-          some account
-        </div>
-        <div className="post__descr">
-          Some post bla bla bla
-        </div>
+        <div className="post__name">some account</div>
+        <div className="post__descr">Some post bla bla bla</div>
       </div>
-    )
+    );
   }
 }

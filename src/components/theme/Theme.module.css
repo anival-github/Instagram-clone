@@ -1,0 +1,22 @@
+.themeBox {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  position: fixed;
+  top: 100px;
+  left: 2%;
+}
+
+.moon {
+  cursor: pointer;
+  -webkit-transition: all 0.4s linear;
+  transition: all 0.4s linear;
+  width: 30px;
+  border-radius: 50px;
+}
+
+.moon:hover {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+/*# sourceMappingURL=Theme.module.css.map */
