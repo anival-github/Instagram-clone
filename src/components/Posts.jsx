@@ -42,18 +42,19 @@ export default class Posts extends Component {
 
   renderItems(arr) {
     return arr.map((item) => {
-      const { name, altname, photo, src, alt, descr, id } = item;
+      const { username, altname, photo, id } = item;
+      const { src, alt, descr } = item.posts[0];
       return (
         <div key={id} className="post">
           <User
             src={photo}
             alt={altname}
-            name={name}
+            username={username}
             min
           />
           <img src={src} alt={alt}></img>
           <div className="post__name">
-            {name}
+            {username}
           </div>
           <div className="post__descr">
             {descr}
