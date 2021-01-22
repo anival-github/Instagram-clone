@@ -43,7 +43,8 @@ export default class Posts extends Component {
   renderItems(arr) {
     return arr.map((item) => {
       const { username, altname, photo, id } = item;
-      const { src, alt, descr } = item.posts[0];
+      const { src, alt, descr, timestamp } = item.posts[0];
+     
       return (
         <div key={id} className="post">
           <User
@@ -59,6 +60,9 @@ export default class Posts extends Component {
           <div className="post__descr">
             {descr}
           </div>
+          <p className="post__time">
+            {Date(timestamp).slice(0,24)}
+          </p>
         </div>
       );
     });
