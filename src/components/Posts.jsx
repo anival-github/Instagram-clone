@@ -1,6 +1,6 @@
 import { Component } from "react";
 // import Post from './Post'
-import InstaService from "../services/instaService";
+// import InstaService from "../services/instaService";
 import Network from "../services/network";
 import User from './User';
 import ErrorMessage from './Error';
@@ -42,22 +42,27 @@ export default class Posts extends Component {
 
   renderItems(arr) {
     return arr.map((item) => {
-      const { name, altname, photo, src, alt, descr, id } = item;
+      const { username, altname, photo, id } = item;
+      const { src, alt, descr, timestamp } = item.posts[0];
+     const date = new Date(+timestamp).toUTCString();
       return (
         <div key={id} className="post">
           <User
             src={photo}
             alt={altname}
-            name={name}
+            username={username}
             min
           />
           <img src={src} alt={alt}></img>
           <div className="post__name">
-            {name}
+            {username}
           </div>
           <div className="post__descr">
             {descr}
           </div>
+          <p className="post__time">
+            {date}
+          </p>
         </div>
       );
     });
