@@ -1,3 +1,5 @@
+// eslint-disable
+
 import { Component } from "react";
 // import Post from './Post'
 // import InstaService from "../services/instaService";

@@ -1,12 +1,17 @@
-const User = (props) => {
-  const {min, src, alt, username} = props
-  return (
-    // eslint-disable-next-line jsx-a11y/anchor-is-valid
-    <a href="#" className={min ? "user min" : "user"}>
-      <img src={src} alt={alt}></img>
-      <div>{username}</div>
-    </a>
-  )
-}
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react/prop-types */
+import { React } from 'react';
 
-export default User
+const User = ({
+  min,
+  src,
+  alt,
+  username,
+}) => (
+  <a href="#" className={min ? 'user min' : 'user'}>
+    <img src={src} alt={alt} />
+    <div>{username}</div>
+  </a>
+);
+
+export default User;
