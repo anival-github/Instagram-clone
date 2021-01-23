@@ -1,8 +1,7 @@
-
 export default class Network {
   constructor() {
     // this._apiBase = 'http://localhost:3000'; --> local
-    this._apiBase = 'https://rs-demo-be1.herokuapp.com'; // --> heroku
+    this._apiBase = "https://rs-demo-be1.herokuapp.com"; // --> heroku
   }
 
   getResource = async (url) => {
@@ -13,12 +12,12 @@ export default class Network {
     }
 
     return await res.json();
-  }
+  };
 
   getAllPosts = async () => {
-    const users = await this.getResource('/users/')
-
-    return users;
+    const res = await this.getResource("/users/");
+    console.log(res);
+    return res;
   }
 
   _transformPosts = (post) => {
@@ -29,13 +28,13 @@ export default class Network {
     }
   }
 
-  getUserPhotos = async (id) => {
-    const users = await this.getResource('/users/')
+  getUserPhotos = async (username) => {
+    const users = await this.getResource("/users/");
 
-    const user = users.find(element => element.id === id)
-
+    const user = users.find((element) => element.username === username);
+    console.log(user);
     const { posts } = user;
 
-    return posts.map(this._transformPosts)
-  }
+    return posts.map(this._transformPosts);
+  };
 }
