@@ -15,7 +15,7 @@ export default class Palette extends Component {
   }
 
   updatePhotos() {
-    this.InstaService.getUserPhotos('1cf6f207-6cde-4cd5-bff7-143946d21fe3')
+    this.InstaService.getUserPhotos("Scott")
       .then(this.onPhotosLoaded)
       .catch(this.onError);
   }
