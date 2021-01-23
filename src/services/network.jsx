@@ -16,15 +16,10 @@ export default class Network {
   }
 
   getAllPosts = async () => {
-    const res = await this.getResource('/posts/')
-    console.log(res);
-    return res;
-  }
+    const users = await this.getResource('/users/')
 
-  // getAllPhotos = async () => {
-  //   const res = await this.getResource('/posts/')
-  //   return res.map(this._transformPosts)
-  // }
+    return users;
+  }
 
   _transformPosts = (post) => {
     return {
@@ -35,7 +30,7 @@ export default class Network {
   }
 
   getUserPhotos = async (id) => {
-    const users = await this.getResource('/posts/')
+    const users = await this.getResource('/users/')
 
     const user = users.find(element => element.id === id)
 

@@ -18,6 +18,9 @@ export default class Header extends Component {
              <li>
                <Link to='/profile/' className="menu__links">Профиль</Link>
              </li>
+             <li>
+               <Link to='/login/' className='menu__links'>Войти</Link>
+             </li>
            </ul>
          </nav>
        </div>
