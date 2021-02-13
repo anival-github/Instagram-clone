@@ -4,7 +4,9 @@ import React from 'react';
 import User from '../Users/User';
 
 const Post = ({ post, user }) => {
-  const { username, altname, photo } = user;
+  const {
+    username, altname, photo, id,
+  } = user;
 
   const {
     src, alt, descr, timestamp,
@@ -15,6 +17,7 @@ const Post = ({ post, user }) => {
   return (
     <div className="post">
       <User
+        id={id}
         src={photo}
         alt={altname}
         username={username}
